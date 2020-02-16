@@ -4,16 +4,21 @@ namespace ConsoleApp
 {
     class Factorial
     {
-        private readonly int value;
+        public int Value { get; set; }
 
-        public Factorial(int startValue)
+        public Factorial(int? startValue)
         {
-            value = startValue;
+            Value = startValue ?? 0; //null coalescing
+        }
+
+        public Factorial() : this(null)
+        {
+
         }
 
         public string Calculate()
         {
-            return $"De faculteit van {value} is {FacCount(value)}";
+            return $"De faculteit van {Value} is {FacCount(Value)}";
         }
 
         private int FacCount(int v)

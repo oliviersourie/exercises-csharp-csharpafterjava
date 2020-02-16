@@ -6,7 +6,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Factorial fac = new Factorial(5);
+            Factorial fac = new Factorial() { Value = 5 };
             fac.Calculate();
         }
     }
