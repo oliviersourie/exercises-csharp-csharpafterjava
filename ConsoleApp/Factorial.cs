@@ -13,7 +13,7 @@ namespace ConsoleApp
 
         public string Calculate()
         {
-            return $"De faculteit van {value} is {FacCount(value)}";
+            return $"The factorial of {value} is {FacCount(value)}";
         }
 
         private int FacCount(int v)
