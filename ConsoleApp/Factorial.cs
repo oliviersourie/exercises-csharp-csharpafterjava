@@ -6,7 +6,7 @@ namespace ConsoleApp
     {
         public static string Calculate(int startValue = 1)
         {
-            return $"De faculteit van {startValue} is {FacCount(startValue)}";
+            return $"The factorial of {startValue} is {FacCount(startValue)}";
         }
 
         private static int FacCount(int v)
