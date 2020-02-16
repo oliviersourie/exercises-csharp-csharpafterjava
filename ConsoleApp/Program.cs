@@ -6,7 +6,8 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Factorial fac = new Factorial(5);
+            fac.Calculate();
         }
     }
 }
