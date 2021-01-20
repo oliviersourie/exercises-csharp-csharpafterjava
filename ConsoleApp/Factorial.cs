@@ -4,7 +4,12 @@ namespace ConsoleApp
 {
     class Factorial
     {
-        public int Value { get; set; }
+        public int Value { get; init; }
+
+        public string Result 
+        { 
+            get => $"The factorial of {Value} is {FacCount(Value)}";
+        }
 
         public Factorial(int? startValue)
         {
@@ -16,12 +21,7 @@ namespace ConsoleApp
 
         }
 
-        public string Calculate()
-        {
-            return $"The factorial of {Value} is {FacCount(Value)}";
-        }
-
-        private int FacCount(int v)
+        private long FacCount(long v)
         {
             if (v > 0)
             {
