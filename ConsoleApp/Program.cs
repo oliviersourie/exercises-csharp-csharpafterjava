@@ -6,7 +6,13 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Factorial.Calculate(5));
+            uint value = default;
+            if(args.Length > 0)
+            {
+                _ = uint.TryParse(args[0], out value);
+            }
+            Console.WriteLine(Factorial.Calculate(value));
+            //Console.WriteLine(Factorial.Calculate(args.Length > 0 ? uint.Parse(args[0]) : default));
         }
     }
 }

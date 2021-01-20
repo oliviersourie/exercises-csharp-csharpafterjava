@@ -1,15 +1,13 @@
-﻿using System;
-
-namespace ConsoleApp
+﻿namespace ConsoleApp
 {
-    class Factorial
+    static class Factorial
     {
-        public static string Calculate(int startValue = 1)
+        public static string Calculate(uint startValue = 1)
         {
             return $"The factorial of {startValue} is {FacCount(startValue)}";
         }
 
-        private static int FacCount(int v)
+        private static ulong FacCount(ulong v)
         {
             if (v > 0)
             {
