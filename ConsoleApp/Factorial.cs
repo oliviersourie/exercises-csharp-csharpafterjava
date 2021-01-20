@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ConsoleApp
+﻿namespace ConsoleApp
 {
     class Factorial
     {
@@ -16,7 +14,7 @@ namespace ConsoleApp
             return $"The factorial of {value} is {FacCount(value)}";
         }
 
-        private int FacCount(int v)
+        private long FacCount(long v)
         {
             if (v > 0)
             {
