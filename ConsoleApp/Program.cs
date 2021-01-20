@@ -6,14 +6,13 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Temperature t1 = new Temperature(30); // ..°C
+            Temperature t1 = new Temperature() { Celsius = 30 }; // ..°C
             Console.WriteLine(t1.Celsius); 
             Console.WriteLine(t1.Fahrenheit); 
             Console.WriteLine(t1.Kelvin); 
             
-            t1.Celsius = 23; // temp is now 23°C
-            Console.WriteLine(t1.Celsius); 
-            Console.WriteLine(t1.Fahrenheit);
+            //t1.Celsius = 23; // temp is now 23°C
+            //t1.Fahrenheit = 75;
 
         }
     }

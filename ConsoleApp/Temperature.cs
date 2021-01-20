@@ -2,11 +2,6 @@
 {
     class Temperature
     {
-        public Temperature(int tempInCelsius)
-        {
-            Celsius = tempInCelsius;
-        }
-
         public double Fahrenheit
         {
             get
@@ -22,6 +17,6 @@
             }
         }
 
-        public int Celsius { get; set; } = 25;
+        public int Celsius { get; init; } = 25;
     }
 }
