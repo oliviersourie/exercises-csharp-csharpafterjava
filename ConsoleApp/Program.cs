@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ClassLib;
+using ClassLib.Models;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,36 +11,42 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            const string stop = "STOP";
-            string inputText;
-            Dictionary<string, int> frequencyTable = new();
-
-            do
+            Computers pcs = new Computers()
             {
-                inputText = Console.ReadLine();
-                if (inputText != stop)
-                {
-                    if (frequencyTable.TryGetValue(inputText, out int currentValue))
-                    {
-                        frequencyTable[inputText] = ++currentValue;
-                    }
-                    else
-                    {
-                        frequencyTable.Add(inputText, 1);
-                    }
-                }
-            } while (inputText != stop);
+                new Laptop { Brand = "Dell", DeviceColor = Color.Black },
+                new Laptop { Brand = "Lenovo", DeviceColor = Color.Black},
+                new Desktop { Brand = "Asus", DeviceColor = Color.Transparant }
+            };
 
-            foreach (KeyValuePair<string, int> text in frequencyTable)
+            foreach (Computer pc in pcs)
             {
-                Console.WriteLine($"{text.Key}: {text.Value}");
+                Console.WriteLine(pc);
             }
+        }
+    }
 
-            //with LINQ: you can leave out the test on 'stop' in the do...while above
-            //frequencyTable.Where(text => text.Key is not stop)
-            //              .ToList()
-            //              .ForEach(text => Console.WriteLine($"{text.Key}: {text.Value}"));
+    class Computers : IEnumerable<Computer>
+    {
+        public List<Computer> ComputerList { get; set; }
 
+        public Computers()
+        {
+            ComputerList = new();
+        }
+
+        public void Add(Computer computer)
+        {
+            ComputerList.Add(computer);
+        }
+
+        public IEnumerator<Computer> GetEnumerator()
+        {
+            return ComputerList.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
