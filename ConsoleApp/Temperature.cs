@@ -17,6 +17,13 @@
             }
         }
 
-        public int Celsius { get; init; } = 25;
+        public double Celsius { get; init; } = 25;
+
+        public void Deconstruct(out double celsius, out double fahrenheit, out double kelvin)
+        {
+            celsius = Celsius;
+            fahrenheit = Fahrenheit;
+            kelvin = Kelvin;
+        }
     }
 }
