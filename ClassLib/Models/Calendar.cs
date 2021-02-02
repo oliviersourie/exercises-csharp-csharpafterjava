@@ -1,11 +1,11 @@
-﻿using System;
+﻿using ClassLib.Models.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using ClassLib;
 
-namespace ClassLib
+namespace ClassLib.Models
 {
-    public class Calendar
+    public class Calendar : ICalendar
     {
         private readonly WeekDays _weekend;
         private readonly WeekDays _workdays;
@@ -25,7 +25,8 @@ namespace ClassLib
         {
             WeekDays daysToShow = default;
 
-            switch(weekDays) {
+            switch (weekDays)
+            {
                 case WeekDays.Weekend:
                     daysToShow = _weekend;
                     break;
@@ -35,7 +36,7 @@ namespace ClassLib
                 case WeekDays.Week:
                     daysToShow = _week;
                     break;
-                case null:
+                default:
                     break;
             }
             foreach (string day in getDays(showFormat == Show.Names ? daysToShow.ToString() : ((int)daysToShow).ToString()))

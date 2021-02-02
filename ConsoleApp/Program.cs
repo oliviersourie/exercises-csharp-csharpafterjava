@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ClassLib;
+using ClassLib.Models;
 
 namespace ConsoleApp
 {
