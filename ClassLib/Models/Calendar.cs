@@ -23,22 +23,34 @@ namespace ClassLib.Models
         }
         public void ShowDays(WeekDays? weekDays, Show showFormat = Show.Names)
         {
-            WeekDays daysToShow = default;
+            //WeekDays daysToShow;
 
-            switch (weekDays)
+            //Traditional switch
+            //switch (weekDays)
+            //{
+            //    case WeekDays.Weekend:
+            //        daysToShow = _weekend;
+            //        break;
+            //    case WeekDays.Workdays:
+            //        daysToShow = _workdays;
+            //        break;
+            //    case WeekDays.Week:
+            //        daysToShow = _week;
+            //        break;
+            //    default:
+            //        break;
+            //}
+
+            //C# Switch expression
+            WeekDays daysToShow = weekDays switch
             {
-                case WeekDays.Weekend:
-                    daysToShow = _weekend;
-                    break;
-                case WeekDays.Workdays:
-                    daysToShow = _workdays;
-                    break;
-                case WeekDays.Week:
-                    daysToShow = _week;
-                    break;
-                default:
-                    break;
-            }
+                WeekDays.Weekend => _weekend,
+                WeekDays.Workdays => _workdays,
+                WeekDays.Week => _week,
+                _ => default
+            };
+
+
             foreach (string day in getDays(showFormat == Show.Names ? daysToShow.ToString() : ((int)daysToShow).ToString()))
             {
                 Console.WriteLine(day);
