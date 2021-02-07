@@ -1,19 +1,10 @@
 ﻿namespace ClassLib
 {
-    public class Person
+    public abstract class Person
     {
-        protected string lastName;
-        protected string firstName;
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
 
-        public Person(string lastName, string firstName)
-        {
-            this.lastName = lastName;
-            this.firstName = firstName;
-        }
-
-        public override string ToString()
-        {
-            return $"{firstName} {lastName}";
-        }
+        public string FullName => $"{FirstName} {LastName}";
     }
 }

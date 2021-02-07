@@ -10,7 +10,7 @@ namespace ClassLib
 
         public override string ToString()
         {
-            return $"Group {Name} has teacher {Teacher.ToString()}";
+            return $"Group {Name} has teacher {Teacher.FullName}";
         }
     }
 }

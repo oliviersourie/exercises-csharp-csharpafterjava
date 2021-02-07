@@ -9,7 +9,7 @@ namespace ClassLib
         public override string ToString()
         {
             string listOfGroups = string.Empty;
-            Groups.ForEach(group => listOfGroups += $"Klas {group.Name}");
+            Groups.ForEach(group => listOfGroups += $"Group {group.Name} has {group.Students.Count} students\n");
 
             return listOfGroups;
         }

@@ -2,21 +2,25 @@
 {
     public class Student: Person
     {
-        protected int studentID;
-        protected string trajectory;
+        public int StudentID { get; set; }
+        public string TrajectoryName { get; set; }
 
         public Student(string firstName, string lastName, int Id, string trajectory)
-            :base(firstName, lastName)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.studentID = Id;
-            this.trajectory = trajectory;
+            FirstName = firstName;
+            LastName = lastName;
+            StudentID = Id;
+            TrajectoryName = trajectory;
+        }
+
+        public Student()
+        {
+
         }
 
         public override string ToString()
         {
-            return $"Student {base.ToString()}";
+            return $"Student {FullName}";
         }
 
     }

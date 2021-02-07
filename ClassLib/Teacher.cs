@@ -8,14 +8,18 @@ namespace ClassLib
    
     public class Teacher : Person
     {
-        protected int teacherId;
+        public int TeacherID { get; set; }
             
-        public Teacher(string firstName, string lastName, int Id)
-            : base(firstName, lastName)
+        public Teacher(string firstName, string lastName, int id)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.teacherId = Id;
+            FirstName = firstName;
+            LastName = lastName;
+            TeacherID = id;
+        }
+
+        public Teacher()
+        {
+
         }
     }
  
