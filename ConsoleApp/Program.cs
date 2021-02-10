@@ -21,7 +21,7 @@ namespace ConsoleApp
                     {
                         if (frequencyTable.TryGetValue(inputWord, out int currentValue))
                         {
-                            frequencyTable[inputText] = ++currentValue;
+                            frequencyTable[inputWord] = ++currentValue;
                         }
                         else
                         {
@@ -36,7 +36,7 @@ namespace ConsoleApp
                 Console.WriteLine($"{text.Key}: {text.Value}");
             }
 
-            //with LINQ: you can leave out the test on 'stop' in the do...while above
+            //with LINQ
             //frequencyTable.Where(text => text.Key is not stop)
             //              .ToList()
             //              .ForEach(text => Console.WriteLine($"{text.Key}: {text.Value}"));
