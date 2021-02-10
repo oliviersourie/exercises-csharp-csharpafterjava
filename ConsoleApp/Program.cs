@@ -14,17 +14,20 @@ namespace ConsoleApp
 
             do
             {
-                inputText = Console.ReadLine();
+                inputText = Console.ReadLine().Trim();
                 if (inputText != stop)
                 {
-                    if (frequencyTable.TryGetValue(inputText, out int currentValue))
+                    foreach (string inputWord in inputText.Split(" "))
                     {
-                        frequencyTable[inputText] = ++currentValue;
-                    }
-                    else
-                    {
-                        frequencyTable.Add(inputText, 1);
-                    }
+                        if (frequencyTable.TryGetValue(inputWord, out int currentValue))
+                        {
+                            frequencyTable[inputText] = ++currentValue;
+                        }
+                        else
+                        {
+                            frequencyTable.Add(inputWord, 1);
+                        }
+                    }                    
                 }
             } while (inputText != stop);
 
