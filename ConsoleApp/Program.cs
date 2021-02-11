@@ -15,7 +15,7 @@ namespace ConsoleApp
             do
             {
                 inputText = Console.ReadLine().Trim();
-                if (inputText != stop)
+                if (inputText is not stop)
                 {
                     foreach (string inputWord in inputText.Split(" "))
                     {
@@ -29,7 +29,7 @@ namespace ConsoleApp
                         }
                     }                    
                 }
-            } while (inputText != stop);
+            } while (inputText is not stop);
 
             foreach (KeyValuePair<string, int> text in frequencyTable)
             {
