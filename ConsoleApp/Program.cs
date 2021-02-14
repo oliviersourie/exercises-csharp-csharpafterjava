@@ -12,7 +12,7 @@ namespace ConsoleApp
             {
                 Groups = new List<Group>() {
                     new Group() {
-                        Name = "2TIa",
+                        Name = "2TI",
                         Students = new List<Student>()
                         {
                             new Student(lastName:"Hoet", firstName:"Jan", Id:323, trajectory:"SE"),
