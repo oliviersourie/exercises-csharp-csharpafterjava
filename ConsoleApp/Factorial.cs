@@ -2,16 +2,16 @@
 {
     class Factorial
     {
-        private readonly int value;
+        private readonly int _value;
 
         public Factorial(int startValue)
         {
-            value = startValue;
+            _value = startValue;
         }
 
         public string Calculate()
         {
-            return $"The factorial of {value} is {FacCount(value)}";
+            return $"The factorial of {_value} is {FacCount(_value)}";
         }
 
         private long FacCount(long v)
