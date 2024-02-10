@@ -1,17 +1,17 @@
 ﻿namespace ConsoleApp
 {
-    class Factorial
+    class Factorial(int value) //Use of Primary constructor (new in C# 12)
     {
-        private readonly int _value;
+        //private readonly int _value;
 
-        public Factorial(int startValue)
-        {
-            _value = startValue;
-        }
+        //public Factorial(int startValue)
+        //{
+        //    _value = startValue;
+        //}
 
         public string Calculate()
         {
-            return $"The factorial of {_value} is {FacCount(_value)}";
+            return $"The factorial of {value} is {FacCount(value)}";
         }
 
         private long FacCount(long v)
