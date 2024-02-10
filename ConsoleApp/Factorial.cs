@@ -1,25 +1,25 @@
 ﻿namespace ConsoleApp
 {
-    class Factorial
+    class Factorial(int? value = default) //primary constructor
     {
-        public int Value { get; init; }
+        public int Value { get; init; } = value ?? 0;
 
         public string Result 
         { 
             get => $"The factorial of {Value} is {FacCount(Value)}";
         }
 
-        public Factorial(int? startValue)
-        {
-            Value = startValue ?? 0; //null coalescing
-        }
+        //public Factorial(int? startValue)
+        //{
+        //    Value = startValue ?? 0; //null coalescing
+        //}
 
-        public Factorial() : this(null)
-        {
+        //public Factorial() : this(null)
+        //{
 
-        }
+        //}
 
-        private long FacCount(long v)
+        private long FacCount(int v)
         {
             if (v > 0)
             {
